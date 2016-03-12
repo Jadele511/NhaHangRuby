@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  get 'menu/index'
+
+  get 'welcome/index'
+  get 'menu' => 'menu/index'
+  get 'contact_us' => "welcome#contact_us"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
