@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item name:</strong>
+  <%= @food_item.name %>
+</p>
+
+<p>
+  <strong>Total cost (+Delivery):</strong>
+  <%= @food_item.price + 20000 %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @order.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @order.address %>
+</p>
+
+<p>
+  <strong>Order time:</strong>
+  <%= @order.created_at.strftime("%b %d, %Y") %>
+</p>
+
+<%= link_to 'Edit', edit_food_item_path(@food_item) %> |
+<%= link_to 'Back', menu_path) %>
