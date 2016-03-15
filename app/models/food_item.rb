@@ -9,8 +9,17 @@ class FoodItem < ActiveRecord::Base
 		end
 	end
 
-	def self.filter_by_section(section)
-		where(section: section)
+	def self.filter_by_section(section, order_by)
+		where(section: section).order(order_by)
 	end
+	
+	def self.search(search)
+	  where("(name ILIKE ?) OR (description ILIKE ?)", "%#{search}%", "%#{search}%")
+	end
+
+
+
+
+
 
 end
